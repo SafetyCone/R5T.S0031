@@ -13,7 +13,7 @@ namespace R5T.S0031
     public static partial class IServiceActionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="O000_Main"/> operation as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="O000_Main"/> operation as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<O000_Main> AddO000_MainAction(this IServiceAction _,
             IServiceAction<IAllRepositoryDirectoryPathsProvider> allRepositoryDirectoryPathsProviderAction,
