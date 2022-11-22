@@ -91,7 +91,7 @@ namespace R5T.S0031
 
             // Level 01.
             var repositoriesDirectoryPathProviderAction = Instances.ServiceAction.AddConstructorBasedRepositoriesDirectoryPathProviderAction(
-                @"C:\Code\DEV\Git\GitHub\SafetyCone");
+            @"C:\Code\DEV\Git\GitHub\SafetyCone");
             //@"C:\Code\DEV\Git\GitHub\davidcoats");
             var gitHubOperatorServiceActions = Instances.ServiceAction.AddGitHubOperatorServiceActions(
                 servicesPlatform.SecretsDirectoryFilePathProviderAction);
