@@ -47,8 +47,8 @@ namespace R5T.S0031
             // Get all local repositories.
             var allRepositoryDirectoryPaths = await this.AllRepositoryDirectoryPathsProvider.GetAllRepositoryDirectoryPaths();
 
-            //// For debug.
-            //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths.Where(x => x.Contains("Z0000")).ToArray();
+            ////// For debug.
+            //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths.Where(x => x.Contains("Augustodunum.Private")).ToArray();
 
             // Get all local repositories with changes.
             var repositoryDirectoryPaths_WithLocalChanges = new List<string>();
