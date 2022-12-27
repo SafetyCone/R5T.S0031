@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.D0105\source\R5T.D0105.I001\R5T.D0105.I001.csproj" />
+    <ProjectReference Include="..\..\..\R5T.F0082\source\R5T.F0082\R5T.F0082.csproj" />
     <ProjectReference Include="..\..\..\R5T.Magyar\source\R5T.Magyar\R5T.Magyar.csproj" />
     <ProjectReference Include="..\..\..\R5T.D0088\source\R5T.D0088.X001\R5T.D0088.X001.csproj" />
     <ProjectReference Include="..\..\..\R5T.D0088.I0002\source\R5T.D0088.I0002\R5T.D0088.I0002.csproj" />
@@ -21,6 +22,7 @@
     <ProjectReference Include="..\..\..\R5T.D0084\source\R5T.D0084.D001.I002\R5T.D0084.D001.I002.csproj" />
     <ProjectReference Include="..\..\..\R5T.D0084\source\R5T.D0084.D002.I001\R5T.D0084.D002.I001.csproj" />
     <ProjectReference Include="..\..\..\R5T.T0108\source\R5T.T0108.X001\R5T.T0108.X001.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Z0022.Private\source\R5T.Z0022\R5T.Z0022.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

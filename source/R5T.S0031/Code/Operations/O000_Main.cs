@@ -22,19 +22,16 @@ namespace R5T.S0031
         public IAllRepositoryDirectoryPathsProvider AllRepositoryDirectoryPathsProvider { get; }
         public IGitOperator GitOperator { get; }
         public ILogger Logger { get; }
-        private INotepadPlusPlusOperator NotepadPlusPlusOperator { get; }
 
 
         public O000_Main(
             IAllRepositoryDirectoryPathsProvider allRepositoryDirectoryPathsProvider,
             IGitOperator gitOperator,
-            ILogger<O000_Main> logger,
-            INotepadPlusPlusOperator notepadPlusPlusOperator)
+            ILogger<O000_Main> logger)
         {
             this.AllRepositoryDirectoryPathsProvider = allRepositoryDirectoryPathsProvider;
             this.GitOperator = gitOperator;
             this.Logger = logger;
-            this.NotepadPlusPlusOperator = notepadPlusPlusOperator;
         }
 
         public async Task Run()
@@ -45,17 +42,21 @@ namespace R5T.S0031
 
             /// Run.
             // Get all local repositories.
-            var allRepositoryDirectoryPaths = await this.AllRepositoryDirectoryPathsProvider.GetAllRepositoryDirectoryPaths();
+            var allRepositoryDirectoryPaths = Instances.FileSystemOperator.GetAllRepositoryDirectoryPaths(
+                Instances.RepositoriesDirectoryPaths.AllOfMine,
+                this.Logger);
 
-            ////// For debug.
-            //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths.Where(x => x.Contains("Augustodunum.Private")).ToArray();
+            //// For debug.
+            //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths
+            //    .Where(x => x.Contains("Augustodunum.Private"))
+            //    .ToArray();
 
             // Get all local repositories with changes.
             var repositoryDirectoryPaths_WithLocalChanges = new List<string>();
 
             foreach (var repositoryDirectoryPath in allRepositoryDirectoryPaths)
             {
-                this.Logger.LogInformation($"Processing repository:\n{repositoryDirectoryPath}...");
+                this.Logger.LogInformation("Processing repository:\n{repositoryDirectoryPath}...", repositoryDirectoryPath);
 
                 var hasLocalChanges = false;
                 try
@@ -67,12 +68,12 @@ namespace R5T.S0031
                 {
                     // The has-local-changes variable is initially false.
 
-                    this.Logger.LogError($"Directory is not a repository:\n{repositoryDirectoryPath}");
+                    this.Logger.LogError("Directory is not a repository:\n{repositoryDirectoryPath}", repositoryDirectoryPath);
                 }
 
                 if(hasLocalChanges)
                 {
-                    this.Logger.LogInformation($"Directory has local changes:\n{repositoryDirectoryPath}.");
+                    this.Logger.LogInformation("Directory has local changes:\n{repositoryDirectoryPath}.", repositoryDirectoryPath);
 
                     repositoryDirectoryPaths_WithLocalChanges.Add(repositoryDirectoryPath);
                 }
@@ -92,7 +93,7 @@ namespace R5T.S0031
             // For each repository with local changes.
             foreach (var repositoryDirectoryPath in repositoryDirectoryPaths_WithLocalChanges)
             {
-                this.Logger.LogInformation($"Processing repository:\n{repositoryDirectoryPath}...");
+                this.Logger.LogInformation("Processing repository:\n{repositoryDirectoryPath}...", repositoryDirectoryPath);
 
                 var localRepositoryDirectoryPath = T0010.LocalRepositoryDirectoryPath.From(repositoryDirectoryPath);
 
