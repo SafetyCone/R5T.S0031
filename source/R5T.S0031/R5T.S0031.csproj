@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\..\R5T.D0084\source\R5T.D0084.D002.I001\R5T.D0084.D002.I001.csproj" />
     <ProjectReference Include="..\..\..\R5T.T0108\source\R5T.T0108.X001\R5T.T0108.X001.csproj" />
     <ProjectReference Include="..\..\..\R5T.Z0022.Private\source\R5T.Z0022\R5T.Z0022.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Z0036\source\R5T.Z0036\R5T.Z0036.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

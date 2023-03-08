@@ -10,6 +10,7 @@ using R5T.D0037;
 using R5T.D0084.D001;
 using R5T.D0105;
 using R5T.T0020;
+using R5T.T0159.Extensions;
 
 
 namespace R5T.S0031
@@ -38,13 +39,13 @@ namespace R5T.S0031
         {
             /// Inputs.
             //var commitMessage = "All changes required for Seville functionality (survey service implementations in project file and generate";
-            var commitMessage = "Interim changes.";
+            var commitMessage = Instances.CommitMessages.InterimChanges;
 
             /// Run.
             // Get all local repositories.
             var allRepositoryDirectoryPaths = Instances.FileSystemOperator.GetAllRepositoryDirectoryPaths(
                 Instances.RepositoriesDirectoryPaths.AllOfMine,
-                this.Logger);
+                this.Logger.ToTextOutput());
 
             //// For debug.
             //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths
