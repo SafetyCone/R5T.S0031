@@ -49,7 +49,7 @@ namespace R5T.S0031
 
             //// For debug.
             //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths
-            //    .Where(x => x.Contains("Augustodunum.Private"))
+            //    .Where(x => x.Contains("D8S"))
             //    .ToArray();
 
             // Get all local repositories with changes.
@@ -108,7 +108,7 @@ namespace R5T.S0031
 
                 await this.GitOperator.Commit(
                     localRepositoryDirectoryPath,
-                    commitMessage);
+                    commitMessage.Value);
 
                 // Push changes to GitHub.
                 this.Logger.LogInformation("Pushing changes...");
