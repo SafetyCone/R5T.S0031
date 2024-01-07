@@ -49,7 +49,7 @@ namespace R5T.S0031
 
             //// For debug.
             //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths
-            //    .Where(x => x.Contains("D8S"))
+            //    .Where(x => x.Contains("D8S.E0005"))
             //    .ToArray();
 
             // Get all local repositories with changes.
