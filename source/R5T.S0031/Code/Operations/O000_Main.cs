@@ -45,11 +45,12 @@ namespace R5T.S0031
             // Get all local repositories.
             var allRepositoryDirectoryPaths = Instances.FileSystemOperator.GetAllRepositoryDirectoryPaths(
                 Instances.RepositoriesDirectoryPaths.AllOfMine,
-                this.Logger.ToTextOutput());
+                this.Logger.ToTextOutput())
+                .Now();
 
             //// For debug.
             //allRepositoryDirectoryPaths = allRepositoryDirectoryPaths
-            //    .Where(x => x.Contains("D8S.E0005"))
+            //    .Where(x => x.Contains("D8S.S0004"))
             //    .ToArray();
 
             // Get all local repositories with changes.
