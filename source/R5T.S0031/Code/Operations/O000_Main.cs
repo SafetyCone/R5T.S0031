@@ -44,7 +44,7 @@ namespace R5T.S0031
             /// Run.
             // Get all local repositories.
             var allRepositoryDirectoryPaths = Instances.FileSystemOperator.GetAllRepositoryDirectoryPaths(
-                Instances.RepositoriesDirectoryPaths.AllOfMine,
+                Instances.RepositoriesDirectoryPathsSets.All_Internal,
                 this.Logger.ToTextOutput())
                 .Now();
 
